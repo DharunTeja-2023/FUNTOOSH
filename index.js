@@ -98,11 +98,15 @@ var t1= gsap.timeline()
    opacity: 1,
    duration: 3,
 })
+.to("#tag", { 
+   opacity: 1,
+   duration: 3,
+})
 const zoomText = document.querySelector('#lan10');
 
 // GSAP Animation: Timed zoom in and out on a loop
 gsap.to(zoomText, {
-   scale: 4, 
+   scale: 2, 
    duration: 6, 
    ease: "power2.inOut", 
    repeat: 0,       // Repeat indefinitely
