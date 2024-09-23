@@ -95,12 +95,24 @@ var t1= gsap.timeline()
 })
 
 .to("#lan10", { 
+   y: -60,
+   opacity: 1,
+   duration: 2,
+})
+.to("#tag", { 
+   y: -60,
    opacity: 1,
    duration: 3,
 })
 .to("#tag", { 
-   opacity: 1,
+   y: -60,
+   opacity: 0,
+   duration: 0.7,
+})
+.to("#language", {
+   height: 0,
    duration: 3,
+   delay: 1
 })
 const zoomText = document.querySelector('#lan10');
 
