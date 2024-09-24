@@ -72,7 +72,7 @@ body {
 }
 #language h2 #l1{
     font-family: myFont;
-    color: #cb6ce6;
+    color: #DD9FEF;
 }
 #language h2 #l2{
     font-family: myFont;
@@ -91,7 +91,7 @@ body {
 }
 #language h5 #l2{
     font-family: Subhead;
-    color: #cb6ce6;
+    color: #DD9FEF;
 }
 #lan1 {
     opacity: 0;
@@ -165,7 +165,7 @@ body {
     text-decoration: none;
     font-size: 16px;
     font-weight: 600;
-    color: #cb6ce6;
+    color: #DD9FEF;
     transition: 0.3s ease;
 }
 
