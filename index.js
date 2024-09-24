@@ -102,12 +102,12 @@ var t1= gsap.timeline()
 .to("#tag", { 
    y: -60,
    opacity: 1,
-   duration: 3,
+   duration: 4,
 })
 .to("#tag", { 
    y: -60,
    opacity: 0,
-   duration: 0.7,
+   duration: 1.3,
 })
 .to("#language", {
    height: 0,
