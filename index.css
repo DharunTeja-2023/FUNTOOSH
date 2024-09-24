@@ -48,7 +48,10 @@ body {
 #language{
     font-family:myFont;
     height: 100vh;
-    background-color: #e697fd;
+    background-image: url('./Images/Bg2.jpg');
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-size: cover; /* Scales the image to cover the entire background */
+    background-position: center; /* Centers the image */
     position: relative;
     display: flex;
     justify-content: center;
@@ -67,12 +70,28 @@ body {
     animation-delay: 1s;
     animation-timing-function: linear;
 }
+#language h2 #l1{
+    font-family: myFont;
+    color: #cb6ce6;
+}
+#language h2 #l2{
+    font-family: myFont;
+    color: #c1ff72;
+}
 #language h5{
     font-family: Subhead;
     color: black;
     margin-top: 150px;
     margin-right: 10px;
     font-size: 20px;
+}
+#language h5 #l1{
+    font-family: Subhead;
+    color: #c1ff72;
+}
+#language h5 #l2{
+    font-family: Subhead;
+    color: #cb6ce6;
 }
 #lan1 {
     opacity: 0;
