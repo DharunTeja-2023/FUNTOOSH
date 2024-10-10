@@ -45,6 +45,19 @@ p {
 body {
     width: 100%; 
 }
+#language .video-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    opacity: 0.8; /* Adjust opacity if needed */
+  }
 #language{
     font-family:myFont;
     height: 100vh;
@@ -72,11 +85,11 @@ body {
 }
 #language h2 #l1{
     font-family: myFont;
-    color: #DD9FEF;
+    color: #FFAC82;
 }
 #language h2 #l2{
     font-family: myFont;
-    color: #c1ff72;
+    color: #FF9191;
 }
 #language h5{
     font-family: Subhead;
@@ -87,11 +100,11 @@ body {
 }
 #language h5 #l1{
     font-family: Subhead;
-    color: #c1ff72;
+    color: #FF9191;
 }
 #language h5 #l2{
     font-family: Subhead;
-    color: #DD9FEF;
+    color: #FFAC82;
 }
 #lan1 {
     opacity: 0;
@@ -140,7 +153,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 80px;
+    padding: 0px 60px;
     background: black;
     box-shadow: 0 5px 15px rgb(0, 0, 0.06);
     z-index: 999;
@@ -165,14 +178,14 @@ body {
     text-decoration: none;
     font-size: 16px;
     font-weight: 600;
-    color: #DD9FEF;
+    color: #FFAC82;
     transition: 0.3s ease;
 }
 
 
 #navbar li a:hover,
 #navbar li a.active {
-    color: #c1ff72;
+    color: #FF9191;
 }
 
 #navbar li a.active::after,
@@ -184,6 +197,72 @@ body {
     position: absolute;
     bottom: -4px;
     left: 20px;
+}
+#navbar #user-info{
+  border: 2px solid white;
+  padding: 10px 10px;
+  border-radius: 5px;
+}
+#navbar #user-info:hover{
+    background-color: white;
+    color: black;
+}
+#navbar #dropdown {
+    display: none; /* Hide dropdown by default */
+    position: absolute;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    top: 40px; /* Adjust based on your design */
+    right: 0;
+}
+
+#navbar #dropdown li {
+    list-style: none;
+    padding: 10px 15px;
+}
+
+#navbar #dropdown li a {
+    color: #333;
+    text-decoration: none;
+}
+
+#user-info:hover #dropdown {
+    display: block; /* Show dropdown on hover */
+}
+
+#navbar #dropdown li a:hover {
+    background: #f0f0f0; /* Highlight on hover */
+}
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+}
+
+.menu-icon span {
+    background: #fff;
+    height: 3px;
+    width: 30px;
+    display: block;
+    border-radius: 2px;
+    transition: all 0.4s ease;
+}
+
+/* Transition for icon when menu is active */
+.menu-icon.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(10px);
+}
+
+.menu-icon.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-icon.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-10px);
 }
 
 /* Home page */
@@ -278,7 +357,7 @@ body {
 #feature .fe-box:nth-child(6) h6{
     background-color: #fff2e5;
 }
-@media screen and (max-width: 600px){
+@media screen and (max-width: 800px){
  @import url('https://fonts.googleapis.com/css2?family=Spartan:weight@100;200;300;400;500;600;700;800;900&display=swap');
 @font-face{
     font-family: myFont;
@@ -353,11 +432,11 @@ body {
 }
 #language h2 #l1{
     font-family: myFont;
-    color: #DD9FEF;
+    color: #FFAC82;
 }
 #language h2 #l2{
     font-family: myFont;
-    color: #c1ff72;
+    color: #FF9191;
 }
 #language h5{
     font-family: Subhead;
@@ -368,11 +447,11 @@ body {
 }
 #language h5 #l1{
     font-family: Subhead;
-    color: #c1ff72;
+    color: #FF9191;
 }
 #language h5 #l2{
     font-family: Subhead;
-    color: #DD9FEF;
+    color: #FFAC82;
 }
 #lan1 {
     opacity: 0;
@@ -430,37 +509,66 @@ body {
     left: 0;
 }
 
-#navbar{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+#navbar {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 85px;
+    right: 0;
+    background-color: black;
+    width: 70%;
+    text-align: center;
+    padding: 35px 0;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
 }
-
 #navbar li{
     list-style: none;
-    padding: 0px 10px;
+    padding: 0px 20px 70px;
     position: relative;  
+}
+#navbar.show {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.menu-icon {
+    display: flex;
 }
 
 #navbar li a {
     text-decoration: none;
-    font-size: 10px;
+    font-size: 25px;
     font-weight: 600;
-    color: #DD9FEF;
+    color: #FFAC82;
     transition: 0.3s ease;
 }
-
+#navbar #log{
+    border: 2px solid white;
+    padding: 3px 9px;
+    border-radius: 5px;
+}
+#navbar #log:hover{
+    background-color: white;
+    color: black;
+}
+#navbar #log img{
+    height: 30px;
+    width: 30px;
+}
 
 #navbar li a:hover,
 #navbar li a.active {
-    color: #c1ff72;
+    color: #FF9191;
 }
 
 #navbar li a.active::after,
 #navbar li a:hover::after {
     content: "";
     width: 55%;
-    height: 2px;
+    height: 0px;
     background: #088178;
     position: absolute;
     bottom: -4px;
@@ -470,7 +578,7 @@ body {
 /* Home page */
 
 #hero {
-    background-image: url('./resources/Images/Mobile BG.jpg');
+    background-image: url('./resources/Images/bg3.png');
     background-repeat: no-repeat; /* Prevents the image from repeating */
     background-size: cover; /* Scales the image to cover the entire background */
     background-position: center; /* Centers the image */
