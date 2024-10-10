@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forget Password</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 350px;
+            animation: slideDown 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+            animation: fadeIn 1.2s ease-out;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 8px;
+            display: block;
+            animation: slideLeft 0.8s ease-in-out;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+
+        input[type="email"], input[type="tel"] {
+            width: 100%;
+            padding: 12px 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+            animation: fadeInUp 0.9s ease-in-out;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+
+        input:focus {
+            border-color: #5cb85c;
+            outline: none;
+            box-shadow: 0 0 10px rgba(92, 184, 92, 0.5);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            animation: bounceIn 1s ease-in-out;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+
+        button:hover {
+            background-color: #4cae4c;
+        }
+
+        .input-toggle {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            transition: opacity 0.5s ease-in-out;
+            opacity: 0;
+            animation: fadeInUp 1.2s ease-in-out;
+            animation-fill-mode: forwards;
+        }
+
+        .input-toggle button {
+            width: 48%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .input-toggle button:hover {
+            background-color: #e0e0e5;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Animations */
+        @keyframes slideDown {
+            0% {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideLeft {
+            0% {
+                transform: translateX(-30px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0.3);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.05);
+                opacity: 1;
+            }
+            70% {
+                transform: scale(0.9);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Forget Password</h2>
+        <form id="forgetPasswordForm">
+            <div class="input-toggle">
+                <button type="button" id="toggleEmail" onclick="showEmail()">Use Email</button>
+                <button type="button" id="togglePhone" onclick="showPhone()">Use Phone</button>
+            </div>
+            <div id="emailInput" class="input-group hidden">
+                <label for="email">Enter your email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email">
+            </div>
+            <div id="phoneInput" class="input-group hidden">
+                <label for="phone">Enter your phone number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        function showEmail() {
+            document.getElementById('emailInput').classList.remove('hidden');
+            document.getElementById('phoneInput').classList.add('hidden');
+        }
+
+        function showPhone() {
+            document.getElementById('phoneInput').classList.remove('hidden');
+            document.getElementById('emailInput').classList.add('hidden');
+        }
+
+        document.getElementById('forgetPasswordForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+
+            if (email || phone) {
+                // Assuming OTP page is 'otp.html'
+                window.location.href = 'otp.html';
+            } else {
+                alert('Please enter either a valid email or phone number.');
+            }
+        });
+    </script>
+
+</body>
+</html>

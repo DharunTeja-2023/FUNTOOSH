@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Verification</title>
+    <style>/* Styling for OTP verification page */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        .otp-container {
+            background-color: white;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        
+        .otp-container.fade-out {
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+        
+        .otp-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+            animation: fade-in 1s ease-in-out;
+        }
+        
+        .otp-subtitle {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 25px;
+            animation: fade-in 1s ease-in-out;
+        }
+        
+        .input-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .otp-input {
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            text-align: center;
+            transition: border-color 0.3s ease;
+        }
+        
+        .otp-input:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+        
+        .otp-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 30px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            width: 100%;
+        }
+        
+        .otp-button:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+        
+        .otp-error {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        .otp-error.show-error {
+            opacity: 1;
+        }
+        
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        </style>
+</head>
+<body>
+
+    <div class="otp-container">
+        <h1 class="otp-title">Verify Your Account</h1>
+        <p class="otp-subtitle">Enter the OTP sent to your registered phone number</p>
+        
+        <div class="input-wrapper">
+            <input type="text" id="otp" class="otp-input" placeholder="Enter OTP" maxlength="6" required>
+        </div>
+        
+        <button id="submitOtp" class="otp-button">Verify</button>
+
+        <div id="otp-error" class="otp-error">Invalid OTP. Please try again.</div>
+    </div>
+
+    <script>
+        const submitOtpBtn = document.getElementById('submitOtp');
+        const otpInput = document.getElementById('otp');
+        const otpError = document.getElementById('otp-error');
+
+        submitOtpBtn.addEventListener('click', function() {
+            const otpValue = otpInput.value;
+
+            // Simulate OTP verification
+            if (otpValue === "123456") {
+                otpError.style.display = 'none'; // Hide error message
+
+                // Success animation (fade-out)
+                document.querySelector('.otp-container').classList.add('fade-out');
+                setTimeout(() => {
+                    localStorage.setItem('isVerified', 'true'); // Store verification status
+                    window.location.href = './index.html'; // Redirect to home page after successful OTP verification
+                }, 600); // Adjust this to match animation duration
+            } else {
+                // Show error message with animation
+                otpError.style.display = 'block';
+                otpError.classList.add('show-error');
+                setTimeout(() => otpError.classList.remove('show-error'), 1000); // Remove class after animation
+            }
+        });
+    </script>
+
+</body>
+</html>
