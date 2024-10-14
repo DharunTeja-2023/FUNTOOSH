@@ -1,0 +1,659 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:weight@100;200;300;400;500;600;700;800;900&display=swap');
+@font-face{
+    font-family: myFont;
+    src: url(./resources/fonts/bonello/Bonello-Regular.otf);
+}
+@font-face{
+    font-family: Subhead;
+    src: url(./resources/fonts/augustus/AUGUSTUS.TTF);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Spartan',sans-serif ;
+}
+h1{
+    font-size: 50px;
+    line-height: 64px;
+    color: #222;
+}
+h2 {
+    font-size: 46px;
+    line-height: 54px;
+    color: #222;
+}
+h4 {
+    font-size: 20px;
+    color: #222;
+}
+h6 {
+    font-weight: 700;
+    font-size: 12px;
+}
+p {
+    font-size: 16px;
+    color: #465b52;
+    margin: 15px 0 20px 0;
+}
+.section-p1{
+    padding: 40px 80px;
+}
+.section-m1 {
+    margin: 40px 0;
+}
+body {
+    width: 100%; 
+}
+#language .video-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    opacity: 0.8; /* Adjust opacity if needed */
+  }
+#language{
+    font-family:myFont;
+    height: 100vh;
+    background-image: url('./resources/Images/Bg2.jpg');
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-size: cover; /* Scales the image to cover the entire background */
+    background-position: center; /* Centers the image */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#language h2{
+    font-family: myFont;
+    font-size: 4vw;
+    color: transparent;
+    color: rgb(84, 20, 20);
+    -webkit-background-clip: text;
+    position: absolute;
+    opacity: 0;
+    animation-name: load;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-timing-function: linear;
+}
+#language h2 #l1{
+    font-family: myFont;
+    color: #FFAC82;
+}
+#language h2 #l2{
+    font-family: myFont;
+    color: #FF9191;
+}
+#language h5{
+    font-family: Subhead;
+    color: black;
+    margin-top: 175px;
+    margin-right: 10px;
+    font-size: 20px;
+}
+#language h5 #l1{
+    font-family: Subhead;
+    color: #FF9191;
+}
+#language h5 #l2{
+    font-family: Subhead;
+    color: #FFAC82;
+}
+#lan1 {
+    opacity: 0;
+}
+
+#lan2 {
+    opacity: 0;
+}
+
+#lan3 {
+    opacity: 0;
+}
+
+#lan4 {
+    opacity: 0;
+}
+
+#lan5 {
+    opacity: 0;
+}
+
+#lan6 {
+    opacity: 0;
+}
+
+#lan7 {
+    opacity: 0;
+}
+
+#lan8 {
+    opacity: 0;
+}
+
+#lan9 {
+    opacity: 0;
+}
+
+#lan10 {
+    opacity: 0;
+}
+#tag{
+    opacity: 0;
+}
+/* header start */
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 60px;
+    background: black;
+    box-shadow: 0 5px 15px rgb(167, 106, 37);
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+#navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar li{
+    list-style: none;
+    padding: 0px 20px;
+    position: relative;  
+}
+
+#navbar li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #FFAC82;
+    transition: 0.3s ease;
+}
+
+
+#navbar li a:hover,
+#navbar li a.active {
+    color: #FF9191;
+}
+
+#navbar li a.active::after,
+#navbar li a:hover::after {
+    content: "";
+    width: 55%;
+    height: 2px;
+    background: #088178;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+#navbar #user-info{
+  border: 2px solid white;
+  padding: 10px 10px;
+  border-radius: 5px;
+}
+#navbar #user-info:hover{
+    background-color: white;
+}
+#user-info:hover{
+    color: black;   
+}
+#navbar #dropdown {
+    display: none; /* Hide dropdown by default */
+    position: absolute;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    top: 40px; /* Adjust based on your design */
+    right: 0;
+}
+
+#navbar #dropdown li {
+    list-style: none;
+    padding: 10px 15px;
+}
+
+#navbar #dropdown li a {
+    color: #333;
+    text-decoration: none;
+}
+
+#user-info:hover #dropdown {
+    display: block; /* Show dropdown on hover */
+}
+
+#navbar #dropdown li a:hover {
+    background: #f0f0f0; /* Highlight on hover */
+}
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+}
+
+.menu-icon span {
+    background: #fff;
+    height: 3px;
+    width: 30px;
+    display: block;
+    border-radius: 2px;
+    transition: all 0.4s ease;
+}
+
+/* Transition for icon when menu is active */
+.menu-icon.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(10px);
+}
+
+.menu-icon.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-icon.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-10px);
+}
+
+/* Home page */
+
+#hero {
+    background-image: url('./resources/Images/bg2.png');
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-size: cover; /* Scales the image to cover the entire background */
+    background-position: center; /* Centers the image */
+    height: 90vh;
+    width: 100%;
+    background-size: cover;
+    background-position: top 25% right 0;
+    padding: 0 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#hero h4 {
+    padding-bottom: 15px;
+}
+
+#hero h1 {
+    color: #088178;
+}
+
+#hero button {
+    background-image: url(/resources/Images/button.png);
+    background-color: transparent;
+    color: #088178;
+    border: 0;
+    padding: 14px 80px 14px 65px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 15px;
+}
+#feature{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+#feature .fe-box {
+    width: 250px;
+    text-align: center;
+    padding: 25px 15px;
+    box-shadow: 20px 20px 34px rgb(0, 0, 0, 0.03);
+    border: 1.7px solid rgb(75, 40, 170);
+    border-radius: 10px;
+    margin: 50px 0;
+    font-weight: 600;
+    font-size: 20px;
+}
+#feature .fe-box:hover {
+    box-shadow: 10px 10px 54px rgb(167, 106, 37);
+}
+#feature .fe-box h3 {
+    display: inline-block;
+    padding: 9px 8px 6px 8px;
+    line-height: 1;
+    border-radius: 4px;
+    background-color: #b1e4e0;
+}
+#feature .fe-box img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: contain;
+    margin-bottom: 10px;
+    mix-blend-mode: color-burn;
+} 
+#feature #clr1 .fe-box h3{
+    background-color: #e2b1e4;
+}
+#feature #clr2 .fe-box h3 {
+    background-color: #e7ca8b;
+}
+
+
+@media screen and (max-width: 800px){
+ @import url('https://fonts.googleapis.com/css2?family=Spartan:weight@100;200;300;400;500;600;700;800;900&display=swap');
+@font-face{
+    font-family: myFont;
+    src: url(./resources/fonts/bonello/Bonello-Regular.otf);
+}
+@font-face{
+    font-family: Subhead;
+    src: url(./resources/fonts/augustus/AUGUSTUS.TTF);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Spartan',sans-serif ;
+}
+h1{
+    font-size: 50px;
+    line-height: 64px;
+    color: #222;
+}
+h2 {
+    font-size: 46px;
+    line-height: 54px;
+    color: #222;
+}
+h4 {
+    font-size: 20px;
+    color: #222;
+}
+h6 {
+    font-weight: 700;
+    font-size: 12px;
+}
+p {
+    font-size: 16px;
+    color: #465b52;
+    margin: 15px 0 20px 0;
+}
+.section-p1{
+    padding: 40px 80px;
+}
+.section-m1 {
+    margin: 40px 0;
+}
+body {
+    width: 100%; 
+}
+#language{
+    font-family:myFont;
+    height: 100vh;
+    background-image: url('./resources/Images/bg4.jpg');
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-size: cover; /* Scales the image to cover the entire background */
+    background-position: center; /* Centers the image */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#language h2{
+    font-family: myFont;
+    font-size: 6vw;
+    color: transparent;
+    color: rgb(84, 20, 20);
+    -webkit-background-clip: text;
+    position: absolute;
+    opacity: 0;
+    animation-name: load;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-timing-function: linear;
+}
+#language h2 #l1{
+    font-family: myFont;
+    color: #FFAC82;
+}
+#language h2 #l2{
+    font-family: myFont;
+    color: #FF9191;
+}
+#language h5{
+    font-family: Subhead;
+    color: black;
+    margin-top: 60px;
+    margin-right: 10px;
+    font-size: 10px;
+}
+#language h5 #l1{
+    font-family: Subhead;
+    color: #FF9191;
+}
+#language h5 #l2{
+    font-family: Subhead;
+    color: #FFAC82;
+}
+#lan1 {
+    opacity: 0;
+}
+
+#lan2 {
+    opacity: 0;
+}
+
+#lan3 {
+    opacity: 0;
+}
+
+#lan4 {
+    opacity: 0;
+}
+
+#lan5 {
+    opacity: 0;
+}
+
+#lan6 {
+    opacity: 0;
+}
+
+#lan7 {
+    opacity: 0;
+}
+
+#lan8 {
+    opacity: 0;
+}
+
+#lan9 {
+    opacity: 0;
+}
+
+#lan10 {
+    opacity: 0;
+}
+#tag{
+    opacity: 0;
+}
+/* header start */
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 25px;
+    background: black;
+    box-shadow: 0 5px 15px rgb(0, 0, 0.06);
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+#navbar {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 85px;
+    right: 0;
+    background-color: black;
+    width: 70%;
+    text-align: center;
+    padding: 35px 0;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+#navbar li{
+    list-style: none;
+    padding: 0px 20px 70px;
+    position: relative;  
+}
+#navbar.show {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.menu-icon {
+    display: flex;
+}
+
+#navbar li a {
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: 600;
+    color: #FFAC82;
+    transition: 0.3s ease;
+}
+#navbar #log{
+    border: 2px solid white;
+    padding: 3px 9px;
+    border-radius: 5px;
+}
+#navbar #log:hover{
+    background-color: white;
+    color: black;
+}
+#navbar #log img{
+    height: 30px;
+    width: 30px;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+    color: #FF9191;
+}
+
+#navbar li a.active::after,
+#navbar li a:hover::after {
+    content: "";
+    width: 55%;
+    height: 0px;
+    background: #088178;
+    position: absolute;
+    bottom: -4px;
+    left: 12px;
+}
+
+/* Home page */
+
+#hero {
+    background-image: url('./resources/Images/bg3.png');
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-size: cover; /* Scales the image to cover the entire background */
+    background-position: center; /* Centers the image */
+    height: 90vh;
+    width: 100%;
+    background-size: cover;
+    background-position: top 25% right 0;
+    padding: 0 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#hero h4 {
+    padding-bottom: 15px;
+}
+
+#hero h1 {
+    color: #088178;
+}
+
+#hero button {
+    background-image: url(/resources/Images/button.png);
+    background-color: transparent;
+    color: #088178;
+    border: 0;
+    padding: 14px 80px 14px 65px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+/* #feature {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#feature .fe-box {
+    width: 180px;
+    text-align: center;
+    padding: 25px 15px;
+    box-shadow:20px 20px 34px rgb(0, 0, 0, 0.03);
+    border: 1px solid #cce7d0;
+    border-radius: 4px;
+    margin: 15px 0;
+}
+
+#feature .fe-box:hover {
+    box-shadow: 40px 40px 54px rgb(70, 62, 221, 0.1);
+}
+
+#feature .fe-box img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#feature .fe-box h6 {
+    display: inline-block;
+    padding: 9px 8px 6px 8px;
+    line-height: 1;
+    border-radius: 4px;
+    color: #088178;
+    background-color: #fddde4;
+}
+
+#feature .fe-box:nth-child(2) h6{
+    background-color: #cdebbc;
+}
+
+#feature .fe-box:nth-child(3) h6{
+    background-color: #d1e8f2;
+}
+
+#feature .fe-box:nth-child(4) h6{
+    background-color: #cdd4f8;
+}
+
+#feature .fe-box:nth-child(5) h6{
+    background-color: #f6dbf6;
+}
+
+#feature .fe-box:nth-child(6) h6{
+    background-color: #fff2e5;
+}    */
+}
