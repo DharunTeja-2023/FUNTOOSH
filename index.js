@@ -146,7 +146,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
        userNameElement.textContent = `Hello, ${userName}`;
    } else {
        // If not verified or no user is logged in, show the login option
-       userInfo.innerHTML = `<a href="login.html"><img src="./resources/Images/log.png" alt="" height="20" width="20">Login</a>`;
+       userInfo.innerHTML = `<a href="login.html"><img src="./resources/navbar/log.png" height="20" width="20">Login</a>`;
    }
 });
 
