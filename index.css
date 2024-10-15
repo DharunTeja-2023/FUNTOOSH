@@ -317,7 +317,7 @@ body {
 }
 
 #hero button {
-    background-image: url(/resources/Images/button.png);
+    background-image: url(./resources/Images/button.png);
     background-color: transparent;
     color: #088178;
     border: 0;
