@@ -37,7 +37,7 @@ p {
     margin: 15px 0 20px 0;
 }
 .section-p1{
-    padding: 40px 20px;
+    padding: 40px 80px;
 }
 .section-m1 {
     margin: 10px 0;
@@ -717,8 +717,7 @@ body {
     cursor: pointer;
     font-weight: 700;
     font-size: 15px;
-}
-}
+}}
 /* banners */
 #sm-banner {
     display: flex;
