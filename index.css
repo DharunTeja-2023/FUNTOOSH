@@ -37,7 +37,11 @@ p {
     margin: 15px 0 20px 0;
 }
 .section-p1{
+<<<<<<< HEAD
     padding: 40px 0px;
+=======
+    padding: 40px 80px;
+>>>>>>> 89cf83a596c05e5575201491060009f530fb9a9a
 }
 .section-m1 {
     margin: 40px 0;
@@ -51,6 +55,17 @@ button.normal{
     border-radius: 4px;
     cursor: pointer;
     border: none;
+    outline: none;
+    transform: 0.2s;
+}
+button.white{
+    font-size: 13px;
+    font-weight: 600;
+    padding: 11px 18px;
+    color: #fff;
+    background-color: transparent;
+    cursor: pointer;
+    border: 1px solid #fff;
     outline: none;
     transform: 0.2s;
 }
@@ -73,7 +88,7 @@ body {
 #language{
     font-family:myFont;
     height: 100vh;
-    background-image: url('./resources/Images/Bg2.jpg');
+    background-image: url('./resources/Images/background/language-animation-bg.jpg');
     background-repeat: no-repeat; /* Prevents the image from repeating */
     background-size: cover; /* Scales the image to cover the entire background */
     background-position: center; /* Centers the image */
@@ -117,6 +132,10 @@ body {
 #language h5 #l2{
     font-family: Subhead;
     color: #FFAC82;
+}
+#language h5 #l3{
+    font-family: Subhead;
+    color :#fff;
 }
 #lan1 {
     opacity: 0;
@@ -166,7 +185,7 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 0px 60px;
-    background: black;
+    background: rgb(22, 10, 56);
     box-shadow: 0 5px 15px rgb(167, 106, 37);
     z-index: 999;
     position: sticky;
@@ -282,7 +301,7 @@ body {
 /* Home page */
 
 #hero {
-    background-image: url('./resources/Images/bg2.png');
+    background-image: url('./resources/Images/background/home-bg.png');
     background-repeat: no-repeat; /* Prevents the image from repeating */
     background-size: cover; /* Scales the image to cover the entire background */
     background-position: center; /* Centers the image */
@@ -323,7 +342,7 @@ body {
     flex-wrap: wrap;
 }
 #feature .fe-box {
-    width: 250px;
+    width: 175px;
     text-align: center;
     padding: 25px 15px;
     box-shadow: 20px 20px 34px rgb(0, 0, 0, 0.03);
@@ -368,12 +387,12 @@ body {
 }
 #product1 .pro {
     width: 23%;
-    min-width: 250px;
+    min-width: 200px;
     padding: 10px 12px;
     border: 1px solid #aca2a2;
     border-radius: 25px;
     cursor: pointer;
-    margin: 15px 0;
+    margin: 15px 10px;
     transition: 0.2s ease;
     position: relative;
 }
@@ -427,7 +446,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-image: url(./resources/Images/background/b2.jpg);
+    background-image: url(./resources/Images/Banners/banner1.jpg);
     width: 100%;
     height: 40vh;
     background-size: cover;
@@ -503,7 +522,7 @@ body {
 #language{
     font-family:myFont;
     height: 100vh;
-    background-image: url('./resources/Images/bg4.jpg');
+    background-image: url('./resources/Images/background/language-animation-mobile-bg.jpg');
     background-repeat: no-repeat; /* Prevents the image from repeating */
     background-size: cover; /* Scales the image to cover the entire background */
     background-position: center; /* Centers the image */
@@ -673,7 +692,7 @@ body {
 /* Home page */
 
 #hero {
-    background-image: url('./resources/Images/bg3.png');
+    background-image: url('./resources/Images/background/home-mobile-bg.png');
     background-repeat: no-repeat; /* Prevents the image from repeating */
     background-size: cover; /* Scales the image to cover the entire background */
     background-position: center; /* Centers the image */
@@ -707,4 +726,75 @@ body {
     font-weight: 700;
     font-size: 15px;
 }
+<<<<<<< HEAD
+=======
+}
+/* banners */
+footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+footer .col{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 50px;
+    margin-bottom: 20px;
+}
+footer .info{
+    width: 40px;
+}
+footer .logo {
+    margin-bottom: -30px;
+}
+footer h4 {
+    font-size: 14px;
+    padding-bottom: 5px;
+}
+footer p {
+    font-size: 13px;
+    margin: 0 0 8px 0;
+}
+footer a {
+    font-size: 13px;
+    text-decoration: none;
+    color: #222;
+    margin-bottom: 10px;
+}
+footer .follow {
+    margin-top: 20px;
+}
+footer .follow i {
+    padding: 5px 10px 5px 10px;
+    border-radius: 4px;
+    border: 1px solid rgb(34, 34, 34);
+    color: #222;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+footer .follow i:hover{
+    color: #088178;
+    background-color: #222;
+}
+footer .install .row img {
+    border: 1px solid #088178;
+    border-radius: 6px;
+}
+footer .install img {
+    margin: 10px 0 15px 0;
+}
+footer a:hover{
+    color: #088178;
+}
+footer .copyright {
+    padding-top: 30px;
+    width: 100%;
+    text-align: center;
+}
+footer .copyright p {
+    color: #45405e;
+    font-size: 10px;
+    font-weight: 600;
+>>>>>>> 89cf83a596c05e5575201491060009f530fb9a9a
 }
