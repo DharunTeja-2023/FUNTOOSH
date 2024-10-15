@@ -305,13 +305,11 @@
             // Capture user name and email (for sign-up)
             const userName = signUpForm.querySelector('input[type="text"]').value;
             const userEmail = signUpForm.querySelector('input[type="email"]').value;
-            const userPhone = signUpForm.querySelector('input[type="text"]:nth-child(3)').value; // Select the phone number input
             const userPassword = signUpForm.querySelector('input[type="password"]').value;
         
             // Save user info to localStorage
             localStorage.setItem('userName', userName);
             localStorage.setItem('loggedInUser', userEmail);
-            localStorage.setItem('userPhone', userPhone);
             localStorage.setItem('userPassword', userPassword); 
         
             // Redirect to OTP verification page
