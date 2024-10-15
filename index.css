@@ -36,12 +36,8 @@ p {
     color: #465b52;
     margin: 15px 0 20px 0;
 }
-.section-p1{
-<<<<<<< HEAD
-    padding: 40px 0px;
-=======
+.section-p1  {
     padding: 40px 80px;
->>>>>>> 89cf83a596c05e5575201491060009f530fb9a9a
 }
 .section-m1 {
     margin: 40px 0;
@@ -725,10 +721,7 @@ body {
     cursor: pointer;
     font-weight: 700;
     font-size: 15px;
-}
-<<<<<<< HEAD
-=======
-}
+}}
 /* banners */
 footer{
     display: flex;
@@ -796,5 +789,4 @@ footer .copyright p {
     color: #45405e;
     font-size: 10px;
     font-weight: 600;
->>>>>>> 89cf83a596c05e5575201491060009f530fb9a9a
 }
