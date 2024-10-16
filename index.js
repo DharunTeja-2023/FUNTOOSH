@@ -156,3 +156,21 @@ document.getElementById('logout').addEventListener('click', function() {
    localStorage.removeItem('isVerified'); // Clear verification status
    window.location.href = 'login.html'; // Redirect to login page or normal home page
 });
+// Optionally, you can add some fade-in animations with JavaScript if desired.
+const feature = document.querySelectorAll('.febox');
+
+feature.forEach(febox => {
+    febox.addEventListener('mouseenter', () => {
+        const dropdown = febox.querySelector('.dropdown-body');
+        dropdown.style.opacity = 0;
+        dropdown.style.display = 'block';
+        gsap.to(dropdown, { opacity: 1, duration: 0.5 });
+    });
+
+    febox.addEventListener('mouseleave', () => {
+        const dropdown = febox.querySelector('.dropdown-body');
+        gsap.to(dropdown, { opacity: 0, duration: 0.5, onComplete: () => {
+            dropdown.style.display = 'none';
+        }});
+    });
+});
