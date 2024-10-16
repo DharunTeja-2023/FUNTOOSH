@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - KAPDAY</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <style>
+        .section-p1 {
+            padding: 40px 80px;
+        }
+        /* Navbar styles */
+        #header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0px 60px;
+            background: rgb(22, 10, 56);
+            box-shadow: 0 5px 15px rgb(167, 106, 37);
+            z-index: 999;
+            position: sticky;
+            top: 0;
+            left: 0;
+        }
+
+        #navbar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #navbar li {
+            list-style: none;
+            padding: 0px 20px;
+            position: relative;
+        }
+
+        #navbar li a {
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            color: #FFAC82;
+            transition: 0.3s ease;
+        }
+
+        #navbar li a:hover,
+        #navbar li a.active {
+            color: #FF9191;
+        }
+
+        #navbar li a.active::after,
+        #navbar li a:hover::after {
+            content: "";
+            width: 55%;
+            height: 2px;
+            background: #088178;
+            position: absolute;
+            bottom: -4px;
+            left: 20px;
+        }
+
+        #navbar #user-info {
+            border: 2px solid white;
+            padding: 10px 10px;
+            border-radius: 5px;
+        }
+
+        #navbar #dropdown {
+            display: none;
+            position: absolute;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            top: 40px;
+            right: 0;
+        }
+
+        #navbar #dropdown li {
+            list-style: none;
+            padding: 10px 15px;
+        }
+
+        #navbar #dropdown li a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        #user-info:hover #dropdown {
+            display: block;
+        }
+
+        #navbar #dropdown li a:hover {
+            background: #f0f0f0;
+        }
+
+        /* Hero Section */
+        #about-hero {
+            background-image: url('./resources/Images/about-hero.jpg');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            color: white;
+            padding: 150px 0;
+            position: relative;
+        }
+
+        #about-hero h1 {
+            font-size: 60px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            animation: slideInFromLeft 1s ease-out;
+        }
+
+        #about-hero p {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+
+        /* About Content */
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 60px 80px;
+            background-color: #f9f9f9;
+        }
+
+        .about-content h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: rgb(22, 10, 56);
+        }
+
+        .about-content p {
+            font-size: 18px;
+            color: #555;
+            max-width: 800px;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        .mission, .values, .team {
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .team img {
+            width: 150px;
+            border-radius: 50%;
+        }
+
+        .team h3 {
+            margin: 10px 0;
+            color: #222;
+        }
+
+        /* Footer styles */
+        footer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            background-color: rgb(22, 10, 56);
+            color: white;
+            padding: 40px 80px;
+        }
+
+        footer .col {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            min-width: 200px;
+            margin-bottom: 20px;
+        }
+
+        footer a {
+            font-size: 13px;
+            color: #fff;
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+
+        footer a:hover {
+            color: #088178;
+        }
+
+        .copyright {
+            width: 100%;
+            text-align: center;
+            padding: 15px 0;
+            background-color: #16003f;
+            margin-top: 20px;
+        }
+
+        .copyright p {
+            color: #fff;
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        @keyframes slideInFromLeft {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Navbar Section -->
+    <section id="header">
+        <a href="index.html"><img src="./resources/navbar/brand.png" class="logo" alt="logo" height="75" width="75"></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="shop.html">SHOP</a></li>
+                <li><a class="active" href="about.html">ABOUT</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="cart.html"><img src="./resources/navbar/cart.png" alt="" height="20" width="20">Cart</a></li>
+                <li id="user-info">
+                    <a href="#" id="user-name">Hello, Customer</a>
+                    <ul id="dropdown">
+                        <li><a href="more-info.html">Details</a></li>
+                        <li><a href="index.html" id="logout">Log Out</a></li>
+                    </ul>
+                </li>                
+            </ul>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section id="about-hero">
+        <h1>About Us</h1>
+        <p>Discover more about our journey and values</p>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="about-content">
+        <div class="mission">
+            <h2>Our Mission</h2>
+            <p>At KAPDAY, we aim to provide top-quality apparel that resonates with our customer's lifestyle. We believe in sustainable fashion and aim to bring innovative designs that inspire confidence and creativity.</p>
+        </div>
+
+        <!-- Values Section -->
+        <div class="values">
+            <h2>Our Values</h2>
+            <p>We value sustainability, creativity, and the impact fashion has on individual expression. Our company embraces ethical production and strives to offer stylish, eco-friendly choices for modern consumers.</p>
+        </div>
+
+        <!-- Team Section -->
+        <div class="team">
+            <h2>Meet Our Team</h2>
+            <div class="team-members">
+                <img src="./resources/Images/team/team1.jpg" alt="Team Member">
+                <h3>John Doe</h3>
+                <p>CEO & Founder</p>
+            </div>
+            <div class="team-members">
+                <img src="./resources/Images/team/team2.jpg" alt="Team Member">
+                <h3>Jane Smith</h3>
+                <p>Head of Design</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="col">
+            <img class="logo" src="./resources/Logo/Black.png" alt="" height="200px" width="200px">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong> Vertex Pearl Complex, A.S. Rao Nagar, Hyderabad, India</p>
+            <p><strong>Phone:</strong> +91 8341548656</p>
+            <p><strong>Hours:</strong> 09:30 AM to 09:30 PM</p>
+        </div>
+        <div class="col">
+            <h4>About</h4>
+            <a href="about.html">About us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="contact.html">Contact us</a>
+        </div>
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <a href="cart.html">View Cart</a>
+            <a href="wishlist.html">My Wishlist</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+        </div>
+        <div class="col">
+            <h4>Install App</h4>
+            <p>From App Store and Google Play</p>
+            <img src="./resources/Images/PAY/app.jpg" alt="">
+            <img src="./resources/Images/PAY/play.jpg" alt="">
+            <p>Secured Payment Gateways</p>
+            <img src="./resources/Images/PAY/pay.png" alt="">
+        </div>
+    </footer>
+    <div class="copyright">
+        <p>© FUNTOOSH @ 2024 | All Rights Reserved</p>
+    </div>
+
+    <!-- Include GSAP for Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script>
+        // GSAP animations for hero section
+        gsap.from("#about-hero h1", { opacity: 0, x: 200, duration: 2.5, ease: "power3.out" });
+        gsap.from("#about-hero p", { opacity: 0, x: -200, duration: 1.5, ease: "power3.out", delay: 0.5 });
+
+        // Scroll-triggered animations for the mission, values, and team sections
+        gsap.from(".mission", { opacity: 0, y: 100, duration: 1.5, ease: "power3.out", scrollTrigger: ".mission" });
+        gsap.from(".values", { opacity: 0, y: 100, duration: 1.5, ease: "power3.out", scrollTrigger: ".values" });
+        gsap.from(".team", { opacity: 0, y: 100, duration: 1.5, ease: "power3.out", scrollTrigger: ".team" });
+        window.addEventListener('DOMContentLoaded', (event) => {
+            const userInfo = document.getElementById('user-info');
+            const userName = localStorage.getItem('userName'); // Retrieve the user's name from localStorage
+            const isVerified = localStorage.getItem('isVerified'); // Check if OTP verification was successful
+            const userNameElement = document.getElementById('user-name');
+         
+            if (userName && isVerified === 'true') {
+                // Display the user's name on the navbar if they are verified
+                userNameElement.textContent = `Hello, ${userName}`;
+            } else {
+                // If not verified or no user is logged in, show the login option
+                userInfo.innerHTML = `<a href="login.html"><img src="./resources/navbar/log.png" height="20" width="20">Login</a>`;
+            }
+         });
+         
+         // Logout functionality
+         document.getElementById('logout').addEventListener('click', function() {
+            localStorage.removeItem('userName'); // Clear user name
+            localStorage.removeItem('isVerified'); // Clear verification status
+            window.location.href = 'login.html'; // Redirect to login page or normal home page
+         });
+    </script>
+</body>
+</html>

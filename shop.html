@@ -332,15 +332,17 @@ footer .install img {
 footer a:hover{
     color: #088178;
 }
-footer .copyright {
-    padding-top: 30px;
-    width: 100%;
+.copyright {
+    width: 100%; /* Ensures full width */
     text-align: center;
+    padding: 15px 0;
+    background-color: #16003f; /* Dark background for copyright section */
+    margin-top: 20px;
 }
-footer .copyright p {
-    color: #45405e;
-    font-size: 10px;
-    font-weight: 600;
+.copyright p {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 400;
 }
     </style>
 </head>
@@ -679,10 +681,10 @@ footer .copyright p {
             <p>Secured Payment Gateways</p>
             <img src="./resources/Images/PAY/pay.png" alt="">
         </div>
-        <div class="copyright">
-            <p>© KAPDAY @ 2024</p>
-        </div>
     </footer>
+    <div class="copyright">
+        <p>© FUNTOOSH @ 2024 | All Rights Reserved</p>
+    </div>
 
     <script>
         // Array to hold cart items
@@ -716,6 +718,27 @@ footer .copyright p {
             localStorage.setItem('cart', JSON.stringify(cart));
             alert(`${product.name} has been added to your cart!`);
         }
+        window.addEventListener('DOMContentLoaded', (event) => {
+            const userInfo = document.getElementById('user-info');
+            const userName = localStorage.getItem('userName'); // Retrieve the user's name from localStorage
+            const isVerified = localStorage.getItem('isVerified'); // Check if OTP verification was successful
+            const userNameElement = document.getElementById('user-name');
+         
+            if (userName && isVerified === 'true') {
+                // Display the user's name on the navbar if they are verified
+                userNameElement.textContent = `Hello, ${userName}`;
+            } else {
+                // If not verified or no user is logged in, show the login option
+                userInfo.innerHTML = `<a href="login.html"><img src="./resources/navbar/log.png" height="20" width="20">Login</a>`;
+            }
+         });
+         
+         // Logout functionality
+         document.getElementById('logout').addEventListener('click', function() {
+            localStorage.removeItem('userName'); // Clear user name
+            localStorage.removeItem('isVerified'); // Clear verification status
+            window.location.href = 'login.html'; // Redirect to login page or normal home page
+         });
     </script>
     
 
