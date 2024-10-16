@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - KAPDAY</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
     <style>
+        .section-p1{
+            padding: 40px 30px;
+        }
         #header {
             display: flex;
             align-items: center;
@@ -242,6 +246,75 @@
     margin-bottom: 40px;
     color: #222;
 }
+footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+footer .col{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 50px;
+    margin-bottom: 20px;
+}
+footer .info{
+    width: 40px;
+}
+footer .logo {
+    margin-bottom: -30px;
+}
+footer h4 {
+    font-size: 14px;
+    padding-bottom: 5px;
+}
+footer p {
+    font-size: 13px;
+    margin: 0 0 8px 0;
+}
+footer a {
+    font-size: 13px;
+    text-decoration: none;
+    color: #222;
+    margin-bottom: 10px;
+}
+footer .follow {
+    margin-top: 20px;
+}
+footer .follow i {
+    padding: 5px 10px 5px 10px;
+    border-radius: 4px;
+    border: 1px solid rgb(34, 34, 34);
+    color: #222;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+footer .follow i:hover{
+    color: #088178;
+    background-color: #222;
+}
+footer .install .row img {
+    border: 1px solid #088178;
+    border-radius: 6px;
+}
+footer .install img {
+    margin: 10px 0 15px 0;
+}
+footer a:hover{
+    color: #088178;
+}
+.copyright {
+    width: 100%; /* Ensures full width */
+    text-align: center;
+    padding: 15px 0;
+    background-color: #16003f; /* Dark background for copyright section */
+    margin-top: 20px;
+}
+.copyright p {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 400;
+}
 
 /* Map container with a square aspect ratio */
 .map-container {
@@ -356,17 +429,56 @@
                 <p>support@kapday.com</p>
             </div>
         </div>
-    </section>
-
-    <!-- Map Section -->
-    <section id="map-section">
-        
-    </section>
-    
+    </section>    
 
     <footer class="section-p1">
-        <p>© FUNTOOSH @ 2024 | All Rights Reserved</p>
+        <div id="col info">
+            <img class="logo" src="./resources/Logo/Black.png" alt="" height="200px" width="200px">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong><span>Vertex Pearl Complex,Radhika Theatre,<br>A.S.Rao Nagar, Hyderabad, Telangana, India, 500062</span></p> 
+            <p><strong>Phone:</strong>+91 8341548656</p>
+            <p><strong>Hours:</strong>09:30 AM to 09:30PM</p>
+            <div class="follow">
+                <h4>Follow Us</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <h4>About</h4>
+            <a href="about.html">About us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="contact.html">Contact us</a>
+        </div>
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <a href="cart.html">View Cart</a>
+            <a href="wishlit.html">My Wishlist</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+        </div>
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From App store and google Play</p>
+            <div class="row">
+                <img src="./resources/Images/PAY/app.jpg" alt="">
+                <img src="./resources/Images/PAY/play.jpg" alt="">
+            </div>
+            <p>Secured Payment Gateways</p>
+            <img src="./resources/Images/PAY/pay.png" alt="">
+        </div>
     </footer>
+    <div class="copyright">
+        <p>© FUNTOOSH @ 2024 | All Rights Reserved</p>
+    </div>
+
 
     <!-- Include GSAP for Animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
