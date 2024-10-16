@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - KAPDAY</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="stylesheet" href="index.css"> <!-- Link to your main stylesheet -->
+    <style>
+        /* Cart Page Styles */
+        .cart-page {
+            padding: 40px 80px;
+        }
+
+        .cart-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        /* Cart Table */
+        .cart-table {
+            flex: 3;
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .cart-table th, .cart-table td {
+            text-align: left;
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .cart-table th {
+            background-color: #088178;
+            color: white;
+        }
+
+        .cart-table img {
+            width: 100px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .quantity input {
+            width: 40px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+        }
+
+        .remove-btn {
+            background-color: #ff6666;
+            color: white;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Cart Summary */
+        .cart-summary {
+            flex: 1;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        .cart-summary h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .cart-summary div {
+            margin-bottom: 10px;
+        }
+
+        .cart-summary div span {
+            float: right;
+            font-weight: bold;
+        }
+
+        .checkout-btn {
+            display: block;
+            width: 100%;
+            background-color: #088178;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .checkout-btn:hover {
+            background-color: #064c45;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar Section -->
+    <section id="header">
+        <a href="index.html"><img src="./resources/navbar/brand.png" class="logo" alt="logo" height="75" width="75"></a>
+        <div>
+            <div class="menu-icon" id="menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul id="navbar">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="shop.html">SHOP</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a class="active" href="cart.html">CART</a></li>
+                <li id="user-info">
+                    <a href="#" id="user-name">Hello, Customer</a> <!-- Default text -->
+                </li>                
+            </ul>
+        </div>
+    </section>
+
+    <!-- Cart Page Content -->
+    <section class="cart-page section-p1">
+        <h1>Shopping Cart</h1>
+
+        <div class="cart-container">
+            <!-- Cart Items -->
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th>Remove</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <img src="./resources/Images/products/f1.jpg" alt="Product Image">
+                            <span>Cartoon Astronaut T-Shirt</span>
+                        </td>
+                        <td>$78</td>
+                        <td class="quantity">
+                            <input type="number" value="1" min="1">
+                        </td>
+                        <td>$78</td>
+                        <td><button class="remove-btn">Remove</button></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="./resources/Images/products/f2.jpg" alt="Product Image">
+                            <span>Space Rocket Hoodie</span>
+                        </td>
+                        <td>$88</td>
+                        <td class="quantity">
+                            <input type="number" value="1" min="1">
+                        </td>
+                        <td>$88</td>
+                        <td><button class="remove-btn">Remove</button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Cart Summary -->
+            <div class="cart-summary">
+                <h2>Cart Summary</h2>
+                <div>Subtotal <span>$166</span></div>
+                <div>Tax <span>$13.28</span></div>
+                <div>Total <span>$179.28</span></div>
+                <button class="checkout-btn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="section-p1">
+        <div class="copyright">
+            <p>© FUNTOOSH @ 2024 | All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <!-- Include GSAP for Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+        <script>
+            // Load cart items from localStorage
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        
+            function loadCart() {
+                const cartTableBody = document.querySelector('.cart-table tbody');
+                cartTableBody.innerHTML = ''; // Clear existing rows
+        
+                cart.forEach(product => {
+                    const row = document.createElement('tr');
+        
+                    row.innerHTML = `
+                        <td>
+                            <img src="${product.image}" alt="Product Image">
+                            <span>${product.name}</span>
+                        </td>
+                        <td>$${product.price}</td>
+                        <td class="quantity">
+                            <input type="number" value="${product.quantity}" min="1" data-name="${product.name}">
+                        </td>
+                        <td>$${(product.price * product.quantity).toFixed(2)}</td>
+                        <td><button class="remove-btn" data-name="${product.name}">Remove</button></td>
+                    `;
+        
+                    cartTableBody.appendChild(row);
+                });
+        
+                updateCartTotal();
+            }
+        
+            // Update cart totals
+            function updateCartTotal() {
+                let subtotal = 0;
+                cart.forEach(product => {
+                    subtotal += product.price * product.quantity;
+                });
+        
+                const tax = subtotal * 0.08;
+                const total = subtotal + tax;
+        
+                document.querySelector('.cart-summary div:nth-child(2) span').innerText = '$' + tax.toFixed(2);
+                document.querySelector('.cart-summary div:nth-child(3) span').innerText = '$' + total.toFixed(2);
+            }
+        
+            // Update product quantity in the cart
+            document.querySelector('.cart-table').addEventListener('change', (event) => {
+                if (event.target.matches('.quantity input')) {
+                    const productName = event.target.getAttribute('data-name');
+                    const newQuantity = parseInt(event.target.value);
+        
+                    const product = cart.find(item => item.name === productName);
+                    if (product) {
+                        product.quantity = newQuantity;
+                    }
+        
+                    // Save updated cart to localStorage
+                    localStorage.setItem('cart', JSON.stringify(cart));
+        
+                    // Update totals
+                    updateCartTotal();
+                }
+            });
+        
+            // Remove product from the cart
+            document.querySelector('.cart-table').addEventListener('click', (event) => {
+                if (event.target.matches('.remove-btn')) {
+                    const productName = event.target.getAttribute('data-name');
+        
+                    // Filter out the removed product
+                    cart = cart.filter(item => item.name !== productName);
+        
+                    // Save updated cart to localStorage
+                    localStorage.setItem('cart', JSON.stringify(cart));
+        
+                    // Reload the cart
+                    loadCart();
+                }
+            });
+        
+            // Initial load of cart items
+            loadCart();
+        </script>
+        
+</body>
+</html>

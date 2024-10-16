@@ -6,7 +6,343 @@
     <title>KAPDAY-Shop</title>
     <link rel="shortcut icon" href="./resources/Logo/titleicon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
-    <link rel="stylesheet" href="shop.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Spartan:weight@100;200;300;400;500;600;700;800;900&display=swap');
+@font-face{
+    font-family: myFont;
+    src: url(./resources/fonts/bonello/Bonello-Regular.otf);
+}
+@font-face{
+    font-family: Subhead;
+    src: url(./resources/fonts/augustus/AUGUSTUS.TTF);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Spartan',sans-serif ;
+}
+h1{
+    font-size: 50px;
+    line-height: 64px;
+    color: #222;
+}
+h2 {
+    font-size: 46px;
+    line-height: 54px;
+    color: #222;
+}
+h4 {
+    font-size: 20px;
+    color: #222;
+}
+h6 {
+    font-weight: 700;
+    font-size: 12px;
+}
+p {
+    font-size: 16px;
+    color: #465b52;
+    margin: 15px 0 20px 0;
+}
+.section-p1{
+    padding: 40px 80px;
+}
+.section-m1 {
+    margin: 40px 0;
+}
+button.normal{
+    font-size: 14px;
+    font-weight: 600;
+    padding: 15px 30px;
+    color: #000;
+    background-color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transform: 0.2s;
+}
+button.white{
+    font-size: 13px;
+    font-weight: 600;
+    padding: 11px 18px;
+    color: #fff;
+    background-color: transparent;
+    cursor: pointer;
+    border: 1px solid #fff;
+    outline: none;
+    transform: 0.2s;
+}
+body {
+    width: 100%; 
+}
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 60px;
+    background: rgb(22, 10, 56);
+    box-shadow: 0 5px 15px rgb(167, 106, 37);
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+#navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar li{
+    list-style: none;
+    padding: 0px 20px;
+    position: relative;  
+}
+
+#navbar li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #FFAC82;
+    transition: 0.3s ease;
+}
+
+
+#navbar li a:hover,
+#navbar li a.active {
+    color: #FF9191;
+}
+
+#navbar li a.active::after,
+#navbar li a:hover::after {
+    content: "";
+    width: 55%;
+    height: 2px;
+    background: #088178;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+#navbar #user-info{
+  border: 2px solid white;
+  padding: 10px 10px;
+  border-radius: 5px;
+}
+#navbar #user-info:hover{
+    background-color: white;
+}
+#user-info:hover{
+    color: black;   
+}
+#navbar #dropdown {
+    display: none; /* Hide dropdown by default */
+    position: absolute;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    top: 40px; /* Adjust based on your design */
+    right: 0;
+}
+
+#navbar #dropdown li {
+    list-style: none;
+    padding: 10px 15px;
+}
+
+#navbar #dropdown li a {
+    color: #333;
+    text-decoration: none;
+}
+
+#user-info:hover #dropdown {
+    display: block; /* Show dropdown on hover */
+}
+
+#navbar #dropdown li a:hover {
+    background: #f0f0f0; /* Highlight on hover */
+}
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+}
+
+.menu-icon span {
+    background: #fff;
+    height: 3px;
+    width: 30px;
+    display: block;
+    border-radius: 2px;
+    transition: all 0.4s ease;
+}
+
+/* Transition for icon when menu is active */
+.menu-icon.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(10px);
+}
+
+.menu-icon.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-icon.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-10px);
+}
+/* Shop Page */
+#page-header{
+    background-image: url(./resources/Images/Banners/banner7.jpg);
+    width: 100%;
+    height: 40vh;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 14px;
+}
+#page-header h2,
+#page-header p{
+    color: #fff;
+}
+#product1{
+    text-align: center;
+}
+#product1 .pro-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 20px;
+}
+#product1 .pro {
+    width: 23%;
+    min-width: 200px;
+    padding: 10px 12px;
+    border: 1px solid #aca2a2;
+    border-radius: 25px;
+    cursor: pointer;
+    margin: 15px 10px;
+    transition: 0.2s ease;
+    position: relative;
+}
+#product1 .pro:hover{
+    box-shadow: 10px 10px 10px rgb(180, 175, 175);
+}
+#product1 .pro img {
+    width: 100%;
+    border-radius: 20px;
+}
+#product1 .pro .des {
+    text-align: start;
+    padding: 10px 0;
+}
+#product1 .pro .des span {
+    color: #45405e;
+    font-size: 15px;
+}
+#product1 .pro .des h5 {
+    padding-top: 7px;
+    color: #1a1a1a;
+    font-size: 18px;
+}
+#product1 .pro .des i {
+    padding-top: 2px;
+    font-size: 14px;
+    color: rgb(243, 181, 25);
+}
+#product1 .pro .des h4 {
+    padding-top: 7px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #088178;
+}
+#product1 .pro .cart {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50px;
+    background-color: #e8f6ea;
+    font-weight: 500;
+    color: #088178;
+    border: 1px solid #cce7d0;
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+}
+footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+footer .col{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 50px;
+    margin-bottom: 20px;
+}
+footer .info{
+    width: 40px;
+}
+footer .logo {
+    margin-bottom: -30px;
+}
+footer h4 {
+    font-size: 14px;
+    padding-bottom: 5px;
+}
+footer p {
+    font-size: 13px;
+    margin: 0 0 8px 0;
+}
+footer a {
+    font-size: 13px;
+    text-decoration: none;
+    color: #222;
+    margin-bottom: 10px;
+}
+footer .follow {
+    margin-top: 20px;
+}
+footer .follow i {
+    padding: 5px 10px 5px 10px;
+    border-radius: 4px;
+    border: 1px solid rgb(34, 34, 34);
+    color: #222;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+footer .follow i:hover{
+    color: #088178;
+    background-color: #222;
+}
+footer .install .row img {
+    border: 1px solid #088178;
+    border-radius: 6px;
+}
+footer .install img {
+    margin: 10px 0 15px 0;
+}
+footer a:hover{
+    color: #088178;
+}
+footer .copyright {
+    padding-top: 30px;
+    width: 100%;
+    text-align: center;
+}
+footer .copyright p {
+    color: #45405e;
+    font-size: 10px;
+    font-weight: 600;
+}
+    </style>
 </head>
 <body>
     <section id="header">
@@ -348,7 +684,40 @@
         </div>
     </footer>
 
-
+    <script>
+        // Array to hold cart items
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+        // Handle adding products to cart
+        document.querySelectorAll('.pro').forEach((product) => {
+            product.querySelector('.cart').addEventListener('click', () => {
+                const productDetails = {
+                    name: product.querySelector('h5').innerText,
+                    price: product.querySelector('h4').innerText.replace('$', ''),
+                    image: product.querySelector('img').src,
+                    quantity: 1
+                };
+    
+                // Add the product to the cart
+                addToCart(productDetails);
+            });
+        });
+    
+        // Function to add product to cart and store it in localStorage
+        function addToCart(product) {
+            const existingProduct = cart.find(item => item.name === product.name);
+            if (existingProduct) {
+                existingProduct.quantity += 1; // Increase quantity if the product is already in the cart
+            } else {
+                cart.push(product); // Add new product
+            }
+    
+            // Save updated cart to localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(`${product.name} has been added to your cart!`);
+        }
+    </script>
+    
 
 </body>
 </html>
