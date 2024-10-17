@@ -226,12 +226,8 @@ body {
   padding: 10px 10px;
   border-radius: 5px;
 }
-#navbar #user-info:hover{
-    background-color: white;
-    text-emphasis-color: black;
-}
 #navbar #user-info :hover{
-    color: black;   
+    color: #fff;  
 }
 #navbar #dropdown {
     display: none; /* Hide dropdown by default */
