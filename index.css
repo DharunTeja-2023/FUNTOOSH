@@ -13,6 +13,9 @@
     box-sizing: border-box;
     font-family: 'Spartan',sans-serif ;
 }
+:root{
+    --raisin-black-color-: #231F20;
+}
 h1{
     font-size: 50px;
     line-height: 64px;
@@ -132,39 +135,30 @@ body {
 #lan1 {
     opacity: 0;
 }
-
 #lan2 {
     opacity: 0;
 }
-
 #lan3 {
     opacity: 0;
 }
-
 #lan4 {
     opacity: 0;
 }
-
 #lan5 {
     opacity: 0;
 }
-
 #lan6 {
     opacity: 0;
 }
-
 #lan7 {
     opacity: 0;
 }
-
 #lan8 {
     opacity: 0;
 }
-
 #lan9 {
     opacity: 0;
 }
-
 #lan10 {
     opacity: 0;
 }
@@ -177,26 +171,23 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 0px 60px;
-    background: rgb(22, 10, 56);
-    box-shadow: 0 5px 15px rgb(167, 106, 37);
+    background: var(--raisin-black-color-);
+    box-shadow: 0 5px 15px var(--raisin-black-color-);
     z-index: 999;
     position: sticky;
     top: 0;
     left: 0;
 }
-
 #navbar{
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
 #navbar li{
     list-style: none;
     padding: 0px 20px;
     position: relative;  
 }
-
 #navbar li a {
     text-decoration: none;
     font-size: 16px;
@@ -204,13 +195,10 @@ body {
     color: #FFAC82;
     transition: 0.3s ease;
 }
-
-
 #navbar li a:hover,
 #navbar li a.active {
     color: #FF9191;
 }
-
 #navbar li a.active::after,
 #navbar li a:hover::after {
     content: "";
@@ -239,21 +227,17 @@ body {
     top: 40px; /* Adjust based on your design */
     right: 0;
 }
-
 #navbar #dropdown li {
     list-style: none;
     padding: 10px 15px;
 }
-
 #navbar #dropdown li a {
     color: #333;
     text-decoration: none;
 }
-
 #user-info:hover #dropdown {
     display: block; /* Show dropdown on hover */
 }
-
 #navbar #dropdown li a:hover {
     background: #f0f0f0; /* Highlight on hover */
 }
@@ -264,7 +248,6 @@ body {
     gap: 5px;
     position: relative;
 }
-
 .menu-icon span {
     background: #fff;
     height: 3px;
@@ -273,22 +256,17 @@ body {
     border-radius: 2px;
     transition: all 0.4s ease;
 }
-
 /* Transition for icon when menu is active */
 .menu-icon.active span:nth-child(1) {
     transform: rotate(45deg) translateY(10px);
 }
-
 .menu-icon.active span:nth-child(2) {
     opacity: 0;
 }
-
 .menu-icon.active span:nth-child(3) {
     transform: rotate(-45deg) translateY(-10px);
 }
-
 /* Home page */
-
 #hero {
     background-image: url('./resources/Images/background/home-bg.png');
     background-repeat: no-repeat; /* Prevents the image from repeating */
@@ -304,15 +282,12 @@ body {
     align-items: flex-start;
     justify-content: center;
 }
-
 #hero h4 {
     padding-bottom: 15px;
 }
-
 #hero h1 {
     color: #088178;
 }
-
 #hero button {
     background-image: url(./resources/Images/button.png);
     background-color: transparent;
@@ -329,6 +304,7 @@ body {
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
+    background-color: #cecbcb;
 }
 #feature .febox {
     width: 200px;
@@ -340,6 +316,8 @@ body {
     margin: 50px 0;
     font-weight: 600;
     font-size: 20px;
+    background-color: whitesmoke;
+    z-index: -999;
 }
 #feature .febox:hover {
     box-shadow: 10px 10px 54px rgb(167, 106, 37);
@@ -356,7 +334,7 @@ body {
     aspect-ratio: 1;
     object-fit: contain;
     margin-bottom: 10px;
-    mix-blend-mode: color-burn;
+    z-index: 999;
 } 
 #feature #clr1 .febox h3{
     background-color: #e2b1e4;
@@ -376,21 +354,17 @@ body {
     z-index: 10;
     width: 100%;
 }
-
 .febox .dropdown-body li {
     margin: 5px 0;
 }
-
 .febox .dropdown-body li a {
     text-decoration: none;
     color: #333;
     font-size: 16px;
 }
-
 .febox:hover .dropdown-body {
     display: block;
 }
-
 /* Hover effect */
 .febox .dropdown-body li a:hover {
     background-color: #f0f0f0;
@@ -745,7 +719,8 @@ body {
     cursor: pointer;
     font-weight: 700;
     font-size: 15px;
-}}
+}
+}
 /* banners */
 #sm-banner {
     display: flex;
@@ -827,6 +802,7 @@ footer{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    background-color: #e9e6e6;
 }
 footer .col{
     display: flex;
@@ -892,6 +868,8 @@ footer a:hover{
     font-size: 20px;
     font-weight: 500;
 }
+
+
 
 
 

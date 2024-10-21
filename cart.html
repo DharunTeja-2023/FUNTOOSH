@@ -5,8 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart - KAPDAY</title>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
-    <link rel="stylesheet" href="index.css"> <!-- Link to your main stylesheet -->
     <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Spartan',sans-serif ;
+        }
+        :root{
+    --raisin-black-color-: #231F20;
+        }
+        body {
+    width: 100%; 
+        }
+        .copyright {
+            bottom: 0;
+            text-align: center;
+            width: 100%; /* Ensures full width */
+            background-color: #16003f; /* Dark background for copyright section */
+            padding: 15px 0;
+            margin-top: 20px;
+        }
+        .copyright p {
+            color: #fff;
+            font-size: 20px;
+            font-weight: 500;
+        }
         /* Cart Page Styles */
         .cart-page {
             padding: 40px 80px;
@@ -102,27 +126,6 @@
     </style>
 </head>
 <body>
-    <!-- Navbar Section -->
-    <section id="header">
-        <a href="index.html"><img src="./resources/navbar/brand.png" class="logo" alt="logo" height="75" width="75"></a>
-        <div>
-            <div class="menu-icon" id="menu-icon">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul id="navbar">
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="shop.html">SHOP</a></li>
-                <li><a href="about.html">ABOUT</a></li>
-                <li><a class="active" href="cart.html">CART</a></li>
-                <li id="user-info">
-                    <a href="#" id="user-name">Hello, Customer</a> <!-- Default text -->
-                </li>                
-            </ul>
-        </div>
-    </section>
-
     <!-- Cart Page Content -->
     <section class="cart-page section-p1">
         <h1>Shopping Cart</h1>
@@ -179,11 +182,10 @@
     </section>
 
     <!-- Footer -->
-    <footer class="section-p1">
-        <div class="copyright">
-            <p>© FUNTOOSH @ 2024 | All Rights Reserved</p>
-        </div>
-    </footer>
+    <div class="copyright">
+        <p>© FUNTOOSH @ 2024 | All Rights Reserved</p>
+    </div>
+
 
     <!-- Include GSAP for Animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>

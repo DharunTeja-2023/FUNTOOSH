@@ -22,6 +22,9 @@
     box-sizing: border-box;
     font-family: 'Spartan',sans-serif ;
 }
+:root{
+    --raisin-black-color-: #231F20;
+}
 h1{
     font-size: 50px;
     line-height: 64px;
@@ -82,26 +85,23 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 0px 60px;
-    background: rgb(22, 10, 56);
-    box-shadow: 0 5px 15px rgb(167, 106, 37);
+    background: var(--raisin-black-color-);
+    box-shadow: 0 5px 15px var(--raisin-black-color-);
     z-index: 999;
     position: sticky;
     top: 0;
     left: 0;
 }
-
 #navbar{
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
 #navbar li{
     list-style: none;
     padding: 0px 20px;
     position: relative;  
 }
-
 #navbar li a {
     text-decoration: none;
     font-size: 16px;
@@ -109,13 +109,10 @@ body {
     color: #FFAC82;
     transition: 0.3s ease;
 }
-
-
 #navbar li a:hover,
 #navbar li a.active {
     color: #FF9191;
 }
-
 #navbar li a.active::after,
 #navbar li a:hover::after {
     content: "";
@@ -147,7 +144,6 @@ body {
     top: 40px; /* Adjust based on your design */
     right: 0;
 }
-
 #navbar #dropdown li {
     list-style: none;
     padding: 10px 15px;
@@ -172,7 +168,6 @@ body {
     gap: 5px;
     position: relative;
 }
-
 .menu-icon span {
     background: #fff;
     height: 3px;
@@ -181,7 +176,6 @@ body {
     border-radius: 2px;
     transition: all 0.4s ease;
 }
-
 /* Transition for icon when menu is active */
 .menu-icon.active span:nth-child(1) {
     transform: rotate(45deg) translateY(10px);
@@ -251,11 +245,6 @@ body {
     color: #1a1a1a;
     font-size: 18px;
 }
-#product1 .pro .des i {
-    padding-top: 2px;
-    font-size: 14px;
-    color: rgb(243, 181, 25);
-}
 #product1 .pro .des h4 {
     padding-top: 7px;
     font-size: 18px;
@@ -279,6 +268,7 @@ footer{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    background-color: #e9e6e6;
 }
 footer .col{
     display: flex;
@@ -332,15 +322,17 @@ footer .install img {
 footer a:hover{
     color: #088178;
 }
-footer .copyright {
-    padding-top: 30px;
-    width: 100%;
+.copyright {
+    width: 100%; /* Ensures full width */
     text-align: center;
+    padding: 15px 0;
+    background-color: #16003f; /* Dark background for copyright section */
+    margin-top: 20px;
 }
-footer .copyright p {
-    color: #45405e;
-    font-size: 10px;
-    font-weight: 600;
+.copyright p {
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
 }
     </style>
 </head>

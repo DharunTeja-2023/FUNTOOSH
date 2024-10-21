@@ -6,16 +6,77 @@
     <title>Contact Us - KAPDAY</title>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
     <style>
+        *{
+            margin: 0;
+            font-family: 'Spartan',sans-serif ;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root{
+            --raisin-black-color-: #231F20;
+        }
+        h1{
+            line-height: 64px;
+            font-size: 50px;
+            color: #222;
+        }
+        h2 {
+            line-height: 54px;
+            font-size: 46px;
+            color: #222;
+        }
+        h4 {
+            color: #222;
+            font-size: 20px;
+        }
+        h6 {
+            font-size: 12px;
+            font-weight: 700;
+        }
+        p {
+            color: #465b52;
+            font-size: 16px;
+            margin: 15px 0 20px 0;
+        }
         .section-p1{
-            padding: 40px 30px;
+            padding: 40px 80px;
+        }
+        .section-m1 {
+            margin: 10px 0;
+        }
+        button.normal{
+            font-weight: 600;
+            font-size: 14px;
+            color: #000;
+            padding: 15px 30px;
+            border-radius: 4px;
+            background-color: #fff;
+            cursor: pointer;
+            border: none;
+            transform: 0.2s;
+            outline: none;
+        }
+        button.white{
+            font-weight: 600;
+            font-size: 13px;
+            color: #fff;
+            padding: 11px 18px;
+            cursor: pointer;
+            background-color: transparent;
+            outline: none;
+            border: 1px solid #fff;
+            transform: 0.2s;
+        }
+        body {
+            width: 100%; 
         }
         #header {
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 0px 60px;
-            background: rgb(22, 10, 56);
-            box-shadow: 0 5px 15px rgb(167, 106, 37);
+            background: var(--raisin-black-color-);
+            box-shadow: 0 5px 15px var(--raisin-black-color-);
             z-index: 999;
             position: sticky;
             top: 0;
@@ -41,13 +102,10 @@
             color: #FFAC82;
             transition: 0.3s ease;
         }
-        
-        
         #navbar li a:hover,
         #navbar li a.active {
             color: #FF9191;
         }
-        
         #navbar li a.active::after,
         #navbar li a:hover::after {
             content: "";
@@ -63,13 +121,13 @@
             padding: 10px 10px;
             border-radius: 5px;
           }
-          #navbar #user-info:hover{
+        #navbar #user-info:hover{
               background-color: white;
               text-emphasis-color: black;
-          }
-          #navbar #user-info :hover{
-              color: black;   
-          }
+        }
+        #navbar #user-info :hover{
+            color: black;   
+        }
         #navbar #dropdown {
             display: none; /* Hide dropdown by default */
             position: absolute;
@@ -79,22 +137,18 @@
             z-index: 1000;
             top: 40px; /* Adjust based on your design */
             right: 0;
-        }
-        
+        }       
         #navbar #dropdown li {
             list-style: none;
             padding: 10px 15px;
         }
-        
         #navbar #dropdown li a {
             color: #333;
             text-decoration: none;
         }
-        
         #user-info:hover #dropdown {
             display: block; /* Show dropdown on hover */
         }
-        
         #navbar #dropdown li a:hover {
             background: #f0f0f0; /* Highlight on hover */
         }
@@ -105,7 +159,6 @@
             gap: 5px;
             position: relative;
         }
-        
         .menu-icon span {
             background: #fff;
             height: 3px;
@@ -114,16 +167,13 @@
             border-radius: 2px;
             transition: all 0.4s ease;
         }
-        
         /* Transition for icon when menu is active */
         .menu-icon.active span:nth-child(1) {
             transform: rotate(45deg) translateY(10px);
         }
-        
         .menu-icon.active span:nth-child(2) {
             opacity: 0;
         }
-        
         .menu-icon.active span:nth-child(3) {
             transform: rotate(-45deg) translateY(-10px);
         }
@@ -139,6 +189,7 @@
 }
 
 #contact-hero h1 {
+    color: white;
     font-size: 60px;
     text-transform: uppercase;
     letter-spacing: 4px;
@@ -148,6 +199,7 @@
 #contact-hero p {
     font-size: 20px;
     margin-top: 20px;
+    color: whitesmoke;
 }
 
 /* Contact Form Section */
@@ -157,29 +209,24 @@
     padding: 60px 80px;
     background-color: #f9f9f9;
 }
-
 .form-container {
     flex: 1;
     margin-right: 50px;
 }
-
 .form-container h2 {
     font-size: 36px;
     color: #222;
     margin-bottom: 30px;
 }
-
 #contactForm {
     display: flex;
     flex-direction: column;
 }
-
 #contactForm label {
     font-size: 16px;
     color: #222;
     margin-bottom: 8px;
 }
-
 #contactForm input, #contactForm textarea {
     padding: 15px;
     margin-bottom: 20px;
@@ -189,11 +236,9 @@
     transition: border-color 0.3s;
     resize: none;
 }
-
 #contactForm input:focus, #contactForm textarea:focus {
     border-color: rgb(22, 10, 56);
 }
-
 .submit-btn {
     padding: 15px 30px;
     background-color: rgb(22, 10, 56);
@@ -205,35 +250,28 @@
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
 }
-
 .submit-btn:hover {
     background-color: #16003f;
     transform: scale(1.05);
 }
-
 .contact-info {
     flex: 0.5;
     font-size: 18px;
 }
-
 .contact-info h2 {
     font-size: 36px;
     margin-bottom: 30px;
 }
-
 .contact-card {
     margin-bottom: 30px;
 }
-
 .contact-card h3 {
     font-size: 24px;
     color: #222;
 }
-
 .contact-card p {
     color: #555;
 }
-
 /* Map Section */
 #map-section {
     text-align: center;
@@ -250,6 +288,7 @@ footer{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    background-color: #e9e6e6;
 }
 footer .col{
     display: flex;
@@ -311,9 +350,9 @@ footer a:hover{
     margin-top: 20px;
 }
 .copyright p {
-    color: #fff;
+    color: white;
     font-size: 20px;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 /* Map container with a square aspect ratio */
