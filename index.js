@@ -174,3 +174,34 @@ feature.forEach(febox => {
         }});
     });
 });
+ // Array to hold cart items
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+        // Handle adding products to cart
+        document.querySelectorAll('.pro').forEach((product) => {
+            product.querySelector('.cart').addEventListener('click', () => {
+                const productDetails = {
+                    name: product.querySelector('h5').innerText,
+                    price: product.querySelector('h4').innerText.replace('$', ''),
+                    image: product.querySelector('img').src,
+                    quantity: 1
+                };
+    
+                // Add the product to the cart
+                addToCart(productDetails);
+            });
+        });
+    
+        // Function to add product to cart and store it in localStorage
+        function addToCart(product) {
+            const existingProduct = cart.find(item => item.name === product.name);
+            if (existingProduct) {
+                existingProduct.quantity += 1; // Increase quantity if the product is already in the cart
+            } else {
+                cart.push(product); // Add new product
+            }
+    
+            // Save updated cart to localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(`${product.name} has been added to your cart!`);
+        }
