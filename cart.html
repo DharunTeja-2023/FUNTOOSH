@@ -13,11 +13,112 @@
             font-family: 'Spartan',sans-serif ;
         }
         :root{
-    --raisin-black-color-: #231F20;
+            --raisin-black-color-: #231F20;
         }
         body {
-    width: 100%; 
+            width: 100%; 
         }
+        /* header start */
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 60px;
+    background: var(--raisin-black-color-);
+    box-shadow: 0 5px 15px var(--raisin-black-color-);
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+#navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#navbar li{
+    list-style: none;
+    padding: 0px 20px;
+    position: relative;  
+}
+#navbar li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #FFAC82;
+    transition: 0.3s ease;
+}
+#navbar li a:hover,
+#navbar li a.active {
+    color: #FF9191;
+}
+#navbar li a.active::after,
+#navbar li a:hover::after {
+    content: "";
+    width: 55%;
+    height: 2px;
+    background: #088178;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+#navbar #user-info{
+  border: 2px solid white;
+  padding: 10px 10px;
+  border-radius: 5px;
+}
+#navbar #user-info :hover{
+    color: #fff;  
+}
+#navbar #dropdown {
+    display: none; /* Hide dropdown by default */
+    position: absolute;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    top: 40px; /* Adjust based on your design */
+    right: 0;
+}
+#navbar #dropdown li {
+    list-style: none;
+    padding: 10px 15px;
+}
+#navbar #dropdown li a {
+    color: #333;
+    text-decoration: none;
+}
+#user-info:hover #dropdown {
+    display: block; /* Show dropdown on hover */
+}
+#navbar #dropdown li a:hover {
+    background: #f0f0f0; /* Highlight on hover */
+}
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+}
+.menu-icon span {
+    background: #fff;
+    height: 3px;
+    width: 30px;
+    display: block;
+    border-radius: 2px;
+    transition: all 0.4s ease;
+}
+/* Transition for icon when menu is active */
+.menu-icon.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(10px);
+}
+.menu-icon.active span:nth-child(2) {
+    opacity: 0;
+}
+.menu-icon.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-10px);
+}
         .copyright {
             position: fixed;
             bottom: 0;
@@ -125,6 +226,32 @@
     </style>
 </head>
 <body>
+
+    <section id="header">
+        <a href="index.html"><img src="./resources/navbar/brand.png" class="logo" alt="logo" height="75" width="75"></a>
+        <div>
+            <div class="menu-icon" id="menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul id="navbar">
+                <li><a class="active" href="index.html">HOME</a></li>
+                <li><a href="shop.html">SHOP</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="cart.html"><img src="./resources/navbar/cart.png" alt="" height="20" width="20">Cart</a></li>
+                <li id="user-info">
+                    <a href="#" id="user-name">Hello, Customer</a> <!-- Default text -->
+                    <ul id="dropdown">
+                        <li><a href="more-info.html">Details</a></li>
+                        <li><a href="index.html" id="logout">Log Out</a></li>
+                    </ul>
+                </li>                
+            </ul>
+        </div>
+    </section>
+
     <!-- Cart Page Content -->
     <section class="cart-page section-p1">
         <h1>Shopping Cart</h1>
@@ -269,6 +396,27 @@
         
             // Initial load of cart items
             loadCart();
+            window.addEventListener('DOMContentLoaded', (event) => {
+                const userInfo = document.getElementById('user-info');
+                const userName = localStorage.getItem('userName'); // Retrieve the user's name from localStorage
+                const isVerified = localStorage.getItem('isVerified'); // Check if OTP verification was successful
+                const userNameElement = document.getElementById('user-name');
+             
+                if (userName && isVerified === 'true') {
+                    // Display the user's name on the navbar if they are verified
+                    userNameElement.textContent = `Hello, ${userName}`;
+                } else {
+                    // If not verified or no user is logged in, show the login option
+                    userInfo.innerHTML = `<a href="login.html"><img src="./resources/navbar/log.png" height="20" width="20">Login</a>`;
+                }
+             });
+             
+             // Logout functionality
+             document.getElementById('logout').addEventListener('click', function() {
+                localStorage.removeItem('userName'); // Clear user name
+                localStorage.removeItem('isVerified'); // Clear verification status
+                window.location.href = 'login.html'; // Redirect to login page or normal home page
+             });
         </script>
         
 </body>
