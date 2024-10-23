@@ -15,10 +15,14 @@
             box-sizing: border-box;
             font-family: 'Montserrat', sans-serif;
         }
-        
+        :root{
+            --raisin-black-color-: #231F20;
+        }
         body{
-            background-color: rgb(57, 57, 57);
-            background: linear-gradient(to right, black);
+            background-image: url('./resources/Images/background/language-animation-bg.jpg');
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+            background-size: cover; /* Scales the image to cover the entire background */
+            background-position: center; /* Centers the image */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -30,7 +34,7 @@
         .container{
             background-color: #fff;
             border-radius: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+            box-shadow: 0 5px 15px var(--raisin-black-color-);
             position: relative;
             overflow: hidden;
             width: 768px;
@@ -166,7 +170,7 @@
         }
         
         .toggle{
-            background-color: black;
+            background-color: var(--raisin-black-color-);
             height: 100%;
             background: linear-gradient(to right, gray);
             color: #fff;
@@ -222,11 +226,11 @@
             .toggle-container {
                 display: none;
             }
-        }</style>
+        }
+    </style>
 </head>
 
 <body>
-
     <div class="container" id="container">
         <div class="form-container sign-up">
             <form id="signUpForm">
